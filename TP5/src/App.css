@@ -1,0 +1,214 @@
+/* --- Estilos Generales del Gestor --- */
+.gestor-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 20px 24px 40px;
+  flex-grow: 1;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* --- Título Principal con Subrayado de acento --- */
+.gestor-container h1 {
+  font-size: 36px;
+  font-weight: 600;
+  color: var(--text-h);
+  margin: 20px 0 10px;
+  position: relative;
+  padding-bottom: 15px;
+  text-align: center;
+}
+
+.gestor-container h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 580px;
+  height: 4px;
+  background-color: #a700fbaa;
+  border-radius: 2px;
+}
+
+/* --- Formulario Moderno --- */
+.gestor-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 100%;
+  max-width: 650px;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+}
+
+.gestor-form h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-h);
+  text-align: left;
+}
+
+.gestor-form label {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-h);
+  text-align: left;
+  margin-bottom: -6px;
+}
+
+.gestor-form input,
+.gestor-form select,
+.gestor-form textarea {
+  width: 100%;
+  min-height: 40px;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text-h);
+  font-family: var(--sans);
+  font-size: 14px;
+  box-sizing: border-box;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+.gestor-form input:focus,
+.gestor-form select:focus,
+.gestor-form textarea:focus {
+  outline: none;
+  border-color: #a700fbaa;
+  box-shadow: 0 0 0 3px rgba(167, 0, 251, 0.15);
+}
+
+.gestor-form textarea {
+  resize: vertical;
+}
+
+/* --- Botones Generales y de Acciones --- */
+.Button_Agregar,
+.Button_Eliminar,
+.Button_Editar {
+  color: white;
+  min-height: 38px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 14px;
+  transition:
+    opacity 0.2s,
+    transform 0.1s;
+}
+
+.Button_Agregar:hover,
+.Button_Eliminar:hover,
+.Button_Editar:hover {
+  opacity: 0.9;
+}
+
+.Button_Agregar:active,
+.Button_Eliminar:active,
+.Button_Editar:active {
+  transform: scale(0.98);
+}
+
+.Button_Agregar {
+  background-color: #4caf50;
+}
+
+.Button_Eliminar {
+  background-color: #e53935;
+}
+
+.Button_Editar {
+  background-color: #fb8c00;
+  color: white;
+}
+
+/* --- Listado de Tareas (Tarjetas) --- */
+.gestor-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  max-width: 650px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.gestor-lista li {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  text-align: left;
+  transition: box-shadow 0.2s;
+}
+
+.gestor-lista li:hover {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+.gestor-lista h4 {
+  margin: 0;
+  font-size: 18px;
+  color: var(--text-h);
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+.gestor-lista p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.4;
+}
+
+/* Contenedor de botones dentro de la tarjeta */
+.gestor-lista .acciones-tarjeta {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+  width: 100%;
+  justify-content: flex-end;
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+}
+
+/* --- Ajustes generales de layout --- */
+#center {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  place-content: center;
+  place-items: center;
+  flex-grow: 1;
+
+  @media (max-width: 1024px) {
+    padding: 32px 20px 24px;
+    gap: 18px;
+  }
+}
